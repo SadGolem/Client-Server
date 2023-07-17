@@ -1,0 +1,38 @@
+﻿@page
+@model ho.Pages.Home.StatementModel
+@{
+}
+<br>
+<h2> Statements </h2>
+<a class='btn btn-primary btn-sm' href='Create'>New Statement</a>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>FIO</th>
+            <th>Location</th>
+            <th>UUID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+         @foreach (var item in Model.listState)
+        {
+        <tr>
+        <td>@item.ID</td>
+        <td>@item.Type</td>
+        <td>@item.Date</td>
+        <td>@item.FIO</td>
+        <td>@item.Location</td>
+        <td>@item.UUID</td>
+        <td>
+        <a class="btn btn-primary btn-sm" href="Edit?id=">Edit</a>
+        <a class="btn btn-primary btn-sm" href="Delete?id=">Delete</a>
+        </td>
+        </tr>
+        }
+    </tbody>
+</table>*
