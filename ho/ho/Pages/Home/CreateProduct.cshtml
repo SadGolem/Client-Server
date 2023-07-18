@@ -1,10 +1,9 @@
 ﻿@page
-@model CreateStatementModel
+@model ho.Pages.Home.CreateProductModel
 @{
 }
-
 <br>
-<h2>New Statement</h2>
+<h2>New Product</h2>
 @if (Model.errorMes.Length > 0)
 {
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -15,33 +14,39 @@
 <form method="POST">
 
     <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Type</label>
+        <label class="col-sm-3 col-form-label">Mark</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="Type" value="@Model.statementInfo.Type">
+            <input type="text" class="form-control" name="Mark" value="@Model.productInfo.Mark">
         </div>
     </div>
     <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Date</label>
+        <label class="col-sm-3 col-form-label">KeyValues</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="Date" value="@Model.statementInfo.Date">
+            <input type="text" class="form-control" name="KeyValues" value="@Model.productInfo.KeyValues">
         </div>
     </div>
     <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">FIO</label>
+        <label class="col-sm-3 col-form-label">ProfileType</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="FIO" value="@Model.statementInfo.FIO">
+            <input type="text" class="form-control" name="ProfileType" value="@Model.productInfo.ProfileType">
         </div>
     </div>
     <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Location</label>
+        <label class="col-sm-3 col-form-label">MarkType</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="Location" value="@Model.statementInfo.Location">
+            <input type="text" class="form-control" name="MarkType" value="@Model.productInfo.MarkType">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">DefectInfo</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="DefectInfo" value="@Model.productInfo.DefectInfo">
         </div>
     </div>
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">UUID</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="UUID" value="@Model.statementInfo.UUID">
+            <input type="text" class="form-control" name="UUID" value="@Model.productInfo.UUID">
         </div>
     </div>
 
@@ -64,5 +69,5 @@
             <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
         </div>
     </div>
-    
+
 </form>

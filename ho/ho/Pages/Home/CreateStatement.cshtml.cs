@@ -60,7 +60,7 @@ namespace ho.Pages.Home
             }
 
             statementInfo.Type = ""; statementInfo.FIO = ""; statementInfo.Date = ""; statementInfo.Location = ""; statementInfo.UUID = "";
-            succsessMessage = "New statement added corrctly";
+            succsessMessage = "New statement added correctly";
 
             Response.Redirect("/Home/Statement");
         }

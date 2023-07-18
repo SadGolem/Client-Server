@@ -1,10 +1,9 @@
 ﻿@page
-@model CreateStatementModel
+@model ho.Pages.Home.CreateDefectsInfoModel
 @{
 }
-
 <br>
-<h2>New Statement</h2>
+<h2>New DefectInfo</h2>
 @if (Model.errorMes.Length > 0)
 {
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -17,31 +16,13 @@
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Type</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="Type" value="@Model.statementInfo.Type">
+            <input type="text" class="form-control" name="Type" value="@Model.defectstInfo.Type">
         </div>
     </div>
     <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Date</label>
+        <label class="col-sm-3 col-form-label">DefectLong</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" name="Date" value="@Model.statementInfo.Date">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">FIO</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="FIO" value="@Model.statementInfo.FIO">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Location</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="Location" value="@Model.statementInfo.Location">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">UUID</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="UUID" value="@Model.statementInfo.UUID">
+            <input type="text" class="form-control" name="DefectLong" value="@Model.defectstInfo.DefectLong">
         </div>
     </div>
 
@@ -64,5 +45,5 @@
             <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
         </div>
     </div>
-    
+
 </form>
