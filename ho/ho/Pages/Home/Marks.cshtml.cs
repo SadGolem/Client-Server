@@ -4,10 +4,10 @@ using Microsoft.Data.SqlClient;
 
 namespace ho.Pages.Home
 {
-    public class StatementModel : PageModel
+    public class MarksModel : PageModel
     {
-        public List<StatementInfo> listState = new List<StatementInfo>() { };
-        public StatementModel() { }
+        public List<MarksInfo> listMarks = new List<MarksInfo>() { };
+        public MarksModel() { }
         public void OnGet()
         {
             try
@@ -16,22 +16,18 @@ namespace ho.Pages.Home
                 using (SqlConnection connection = new SqlConnection(conncetionString))
                 {
                     connection.Open();
-                    string sql = "SELECT * FROM Table_Statement";
+                    string sql = "SELECT * FROM Table_MarksTypes";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                StatementInfo info = new StatementInfo();
+                                MarksInfo info = new MarksInfo();
                                 info.ID = "" + reader.GetInt32(0);
-                                info.Type = reader.GetString(1);
-                                info.Date = reader.GetDateTime(2).ToString();
-                                info.FIO = reader.GetString(3);
-                                info.Location = reader.GetString(4);
-                                info.UUID = "" + reader.GetGuid(5);
+                                info.Name = reader.GetString(1);
 
-                                listState.Add(info);
+                                listMarks.Add(info);
                             }
                         }
                     }
@@ -43,14 +39,10 @@ namespace ho.Pages.Home
             }
         }
 
-        public class StatementInfo
+        public class MarksInfo
         {
             public string ID;
-            public string? Type;
-            public string? Date;
-            public string? FIO;
-            public string? Location;
-            public string? UUID;
+            public string Name;
         }
     }
 }

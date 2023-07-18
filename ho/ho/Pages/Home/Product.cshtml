@@ -1,0 +1,38 @@
+﻿@page
+@model ho.Pages.Home.ProductModel
+@{
+}
+<br>
+<h2> Product </h2>
+<a class='btn btn-primary btn-sm' href='Create'>New Product</a>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Mark</th>
+            <th>KeyValues</th>
+            <th>ProfileType</th>
+            <th>MarkType</th>
+            <th>DefectInfo</th>
+            <th>UUID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.listProduct)
+        {
+            <tr>
+                <td>@item.Mark</td>
+                <td>@item.KeyValues</td>
+                <td>@item.ProfileType</td>
+                <td>@item.MarkType</td>
+                <td>@item.DefectInfo</td>
+                <td>@item.UUID</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="Edit?id=">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="Delete?id=">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -4,10 +4,10 @@ using Microsoft.Data.SqlClient;
 
 namespace ho.Pages.Home
 {
-    public class StatementModel : PageModel
+    public class DefectsInfoModel : PageModel
     {
-        public List<StatementInfo> listState = new List<StatementInfo>() { };
-        public StatementModel() { }
+        public List<DefectsInfo> listDefectsInfo = new List<DefectsInfo>() { };
+        public DefectsInfoModel() { }
         public void OnGet()
         {
             try
@@ -16,22 +16,19 @@ namespace ho.Pages.Home
                 using (SqlConnection connection = new SqlConnection(conncetionString))
                 {
                     connection.Open();
-                    string sql = "SELECT * FROM Table_Statement";
+                    string sql = "SELECT * FROM Table_DefectInfo";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                StatementInfo info = new StatementInfo();
+                                DefectsInfo info = new DefectsInfo();
                                 info.ID = "" + reader.GetInt32(0);
-                                info.Type = reader.GetString(1);
-                                info.Date = reader.GetDateTime(2).ToString();
-                                info.FIO = reader.GetString(3);
-                                info.Location = reader.GetString(4);
-                                info.UUID = "" + reader.GetGuid(5);
+                                info.Type = "" + reader.GetInt32(1);
+                                info.DefectLong = reader.GetDouble(2).ToString();
 
-                                listState.Add(info);
+                                listDefectsInfo.Add(info);
                             }
                         }
                     }
@@ -43,14 +40,11 @@ namespace ho.Pages.Home
             }
         }
 
-        public class StatementInfo
+        public class DefectsInfo
         {
             public string ID;
-            public string? Type;
-            public string? Date;
-            public string? FIO;
-            public string? Location;
-            public string? UUID;
+            public string Type;
+            public string DefectLong;
         }
     }
 }

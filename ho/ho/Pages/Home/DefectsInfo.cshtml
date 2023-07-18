@@ -1,0 +1,32 @@
+﻿@page
+@model ho.Pages.Home.DefectsInfoModel
+@{
+}
+<br>
+<h2> DefectInfo </h2>
+<a class='btn btn-primary btn-sm' href='Create'>New Defect Info</a>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>DefectLong</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.listDefectsInfo)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Type</td>
+                <td>@item.DefectLong</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="Edit?id=">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="Delete?id=">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -4,10 +4,10 @@ using Microsoft.Data.SqlClient;
 
 namespace ho.Pages.Home
 {
-    public class StatementModel : PageModel
+    public class ProductModel : PageModel
     {
-        public List<StatementInfo> listState = new List<StatementInfo>() { };
-        public StatementModel() { }
+        public List<ProductInfo> listProduct = new List<ProductInfo>() { };
+        public ProductModel() { }
         public void OnGet()
         {
             try
@@ -16,22 +16,22 @@ namespace ho.Pages.Home
                 using (SqlConnection connection = new SqlConnection(conncetionString))
                 {
                     connection.Open();
-                    string sql = "SELECT * FROM Table_Statement";
+                    string sql = "SELECT * FROM Table_Products";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                StatementInfo info = new StatementInfo();
-                                info.ID = "" + reader.GetInt32(0);
-                                info.Type = reader.GetString(1);
-                                info.Date = reader.GetDateTime(2).ToString();
-                                info.FIO = reader.GetString(3);
-                                info.Location = reader.GetString(4);
+                                ProductInfo info = new ProductInfo();
+                                info.Mark = reader.GetString(0);
+                                info.KeyValues = reader.GetString(1);
+                                info.ProfileType = "" + reader.GetInt32(2);
+                                info.MarkType = "" + reader.GetInt32(3);
+                                info.DefectInfo = "" + reader.GetInt32(4);
                                 info.UUID = "" + reader.GetGuid(5);
 
-                                listState.Add(info);
+                                listProduct.Add(info);
                             }
                         }
                     }
@@ -43,14 +43,14 @@ namespace ho.Pages.Home
             }
         }
 
-        public class StatementInfo
+        public class ProductInfo
         {
-            public string ID;
-            public string? Type;
-            public string? Date;
-            public string? FIO;
-            public string? Location;
-            public string? UUID;
+            public string Mark;
+            public string KeyValues;
+            public string ProfileType;
+            public string MarkType;
+            public string DefectInfo;
+            public string UUID;
         }
     }
 }

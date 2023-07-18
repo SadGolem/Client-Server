@@ -1,0 +1,30 @@
+﻿@page
+@model ho.Pages.Home.MarksModel
+@{
+}
+<br>
+<h2> Marks </h2>
+<a class='btn btn-primary btn-sm' href='Create'>New Mark</a>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.listMarks)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="Edit?id=">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="Delete?id=">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
