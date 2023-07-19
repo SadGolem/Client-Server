@@ -1,8 +1,8 @@
 ﻿@page
 @using Microsoft.Data.SqlClient;
 
-@using static ho.Pages.Home.MarksModel;
-@*MARKS*@
+@using static ho.Pages.Home.ProfileModel;
+@*PROFILE*@
 @{
     try
     {
@@ -14,7 +14,7 @@
         {
             connection.Open();
 
-            String sql = "DELETE FROM Table_MarksTypes WHERE id_MarkType=@id";
+            String sql = "DELETE FROM Table_ProfileTypes WHERE id_ProfileType=@id";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@id", id);
@@ -26,5 +26,5 @@
     {
         Console.WriteLine(e);
     }
-    Response.Redirect("/Home/Marks");
+    Response.Redirect("/Home/Profile");
 }

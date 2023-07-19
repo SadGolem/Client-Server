@@ -1,12 +1,12 @@
 ﻿@page
 @using Microsoft.Data.SqlClient;
 
-@using static ho.Pages.Home.MarksModel;
-@*MARKS*@
+@using static ho.Pages.Home.ProductModel;
+@*PRODUCT*@
 @{
     try
     {
-        String id = Request.Query["id"];
+        String uuid = Request.Query["id"];
 
         string connectionString = "Data Source=DESKTOP-AVLULP7;Initial Catalog=EVRAZ_NIR_DB;Integrated Security=True;TrustServerCertificate=True";
 
@@ -14,10 +14,10 @@
         {
             connection.Open();
 
-            String sql = "DELETE FROM Table_MarksTypes WHERE id_MarkType=@id";
+            String sql = "DELETE FROM Table_Products WHERE uuid=@uuid";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
-                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@uuid", uuid);
                 command.ExecuteNonQuery();
             }
         }
@@ -26,5 +26,5 @@
     {
         Console.WriteLine(e);
     }
-    Response.Redirect("/Home/Marks");
+    Response.Redirect("/Home/Product");
 }

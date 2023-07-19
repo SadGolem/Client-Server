@@ -1,8 +1,7 @@
 ﻿@page
 @using Microsoft.Data.SqlClient;
 
-@using static ho.Pages.Home.MarksModel;
-@*MARKS*@
+@using static ho.Pages.Home.DefectsModel;
 @{
     try
     {
@@ -14,7 +13,7 @@
         {
             connection.Open();
 
-            String sql = "DELETE FROM Table_MarksTypes WHERE id_MarkType=@id";
+            String sql = "DELETE FROM Table_DefectTypes WHERE id_DefectType=@id";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.Parameters.AddWithValue("@id", id);
@@ -26,5 +25,5 @@
     {
         Console.WriteLine(e);
     }
-    Response.Redirect("/Home/Marks");
+    Response.Redirect("/Home/Defects");
 }

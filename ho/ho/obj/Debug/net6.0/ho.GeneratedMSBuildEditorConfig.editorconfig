@@ -52,12 +52,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxEZWZlY3RzSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/DeleteDefect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxEZWxldGVEZWZlY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/DeleteDefectInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxEZWxldGVEZWZlY3RJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/DeleteMarks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxEZWxldGVNYXJrcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/DeleteProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxEZWxldGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/DeleteProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxEZWxldGVQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/DeleteStatement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxEZWxldGVTdGF0ZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/EditDefect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxFZGl0RGVmZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/EditDefectInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxFZGl0RGVmZWN0SW5mby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/EditMark.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxFZGl0TWFyay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/EditProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxFZGl0UHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/EditStatement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxFZGl0U3RhdGVtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Project_Visual/Evraz/evraz/ho/ho/Pages/Home/Marks.cshtml]
