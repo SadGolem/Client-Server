@@ -1,0 +1,28 @@
+﻿@page
+@using Microsoft.Data.SqlClient;
+@using static ho.Pages.Home.StatementModel;
+@{
+    try
+    {
+        String id = Request.Query["id"];
+
+        string connectionString = "Data Source=DESKTOP-AVLULP7;Initial Catalog=EVRAZ_NIR_DB;Integrated Security=True;TrustServerCertificate=True";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            String sql = "DELETE FROM Table_Statement WHERE id_Statement=@id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+    }
+    Response.Redirect("/Home/Statement");
+}

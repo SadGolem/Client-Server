@@ -7,6 +7,7 @@ namespace ho.Pages.Home
     public class StatementModel : PageModel
     {
         public List<StatementInfo> listState = new List<StatementInfo>() { };
+        public string _ID;
         public StatementModel() { }
         public void OnGet()
         {
@@ -51,6 +52,11 @@ namespace ho.Pages.Home
             public string? FIO;
             public string? Location;
             public string? UUID;
+        }
+
+        public string ID()
+        {
+            return _ID;
         }
     }
 }
