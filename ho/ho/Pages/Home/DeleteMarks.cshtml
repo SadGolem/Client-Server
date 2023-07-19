@@ -1,0 +1,30 @@
+﻿@page
+@using Microsoft.Data.SqlClient;
+
+@using static ho.Pages.Home.MarksModel;
+@*MARKS*@
+@{
+    try
+    {
+        String id = Request.Query["id"];
+
+        string connectionString = "Data Source=HOME-PC;Initial Catalog=bd;Integrated Security=True;TrustServerCertificate=True";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            String sql = "DELETE FROM Table_MarksTypes WHERE id_MarkType=@id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+    }
+    Response.Redirect("/Home/Marks");
+}
